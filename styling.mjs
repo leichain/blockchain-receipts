@@ -117,9 +117,10 @@ fetch(apiUrl)
         const etherscanLink = document.createElement('a');
         etherscanLink.href = `https://etherscan.io/tx/${transaction.tx_hash}`;
         etherscanLink.target = '_blank';
-        etherscanLink.textContent = `tx hash: ${transaction.tx_hash}`;
+        etherscanLink.innerHTML = `<strong>Transaction Link:</strong> ${transaction.tx_hash}`;
         etherscanLinkElement.appendChild(etherscanLink);
         detailsDiv.appendChild(etherscanLinkElement);
+
 
         const walletElement = document.createElement('p');
         walletElement.innerHTML = `<strong>Wallet Address:</strong> ${transaction.from_address}`;
