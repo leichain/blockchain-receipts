@@ -1,1 +1,1 @@
-# blockchain-receipts
+# Blockchain Receipts
