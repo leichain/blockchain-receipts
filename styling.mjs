@@ -108,6 +108,8 @@ fetch(apiUrl)
         titleElement.textContent = 'NFT Sale Receipt';
         headerDiv.appendChild(titleElement);
 
+        receiptDiv.appendChild(headerDiv);
+
         const detailsDiv = document.createElement('div');
         detailsDiv.className = 'details';
 
