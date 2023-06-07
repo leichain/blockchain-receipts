@@ -117,8 +117,7 @@ fetch(apiUrl)
         const etherscanLink = document.createElement('a');
         etherscanLink.href = `https://etherscan.io/tx/${transaction.tx_hash}`;
         etherscanLink.target = '_blank';
-        etherscanLink.textContent = `${transaction.tx_hash}`; // Set the text content to the transaction hash
-        etherscanLinkElement.appendChild(etherscanLink);
+        etherscanLink.textContent = `tx hash: ${transaction.tx_hash}`;
         detailsDiv.appendChild(etherscanLinkElement);
 
         const walletElement = document.createElement('p');
@@ -153,8 +152,10 @@ fetch(apiUrl)
         footerDiv.className = 'footer';
 
         const feesPaidElement = document.createElement('p');
-        feesPaidElement.innerHTML = `<strong>Fees paid (USD):</strong> $${transaction.pretty_gas_quote}`;
+        feesPaidElement.innerHTML = `<strong>Fees paid (USD):</strong> ${transaction.pretty_gas_quote}`;
         footerDiv.appendChild(feesPaidElement);
+
+        receiptDiv.appendChild(footerDiv);
 
         document.body.appendChild(receiptDiv);
       }
