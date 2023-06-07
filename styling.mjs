@@ -108,10 +108,14 @@ fetch(apiUrl)
         titleElement.textContent = 'NFT Sale Receipt';
         headerDiv.appendChild(titleElement);
 
-        const transactionElement = document.createElement('p');
-        transactionElement.innerHTML = `<strong>Transaction Hash:</strong> ${transaction.tx_hash}`;
-        headerDiv.appendChild(transactionElement);
-        receiptDiv.appendChild(headerDiv);
+        const etherscanLinkElement = document.createElement('p');
+        const etherscanLink = document.createElement('a');
+        etherscanLink.href = `https://etherscan.io/tx/${transaction.tx_hash}`;
+        etherscanLink.target = '_blank';
+        etherscanLink.textContent = `${transaction.tx_hash}`; // Set the text content to the transaction hash
+        etherscanLinkElement.appendChild(etherscanLink);
+        footerDiv.appendChild(etherscanLinkElement);
+        receiptDiv.appendChild(footerDiv);
 
         const detailsDiv = document.createElement('div');
         detailsDiv.className = 'details';
@@ -150,15 +154,6 @@ fetch(apiUrl)
         const feesPaidElement = document.createElement('p');
         feesPaidElement.innerHTML = `<strong>Fees paid (USD):</strong> $${transaction.pretty_gas_quote}`;
         footerDiv.appendChild(feesPaidElement);
-
-        const etherscanLinkElement = document.createElement('p');
-        const etherscanLink = document.createElement('a');
-        etherscanLink.href = `https://etherscan.io/tx/${transaction.tx_hash}`;
-        etherscanLink.target = '_blank';
-        etherscanLink.textContent = 'View this transaction on Etherscan';
-        etherscanLinkElement.appendChild(etherscanLink);
-        footerDiv.appendChild(etherscanLinkElement);
-        receiptDiv.appendChild(footerDiv);
 
         document.body.appendChild(receiptDiv);
       }
