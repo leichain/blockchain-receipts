@@ -108,17 +108,16 @@ fetch(apiUrl)
         titleElement.textContent = 'NFT Sale Receipt';
         headerDiv.appendChild(titleElement);
 
+        const detailsDiv = document.createElement('div');
+        detailsDiv.className = 'details';
+
         const etherscanLinkElement = document.createElement('p');
         const etherscanLink = document.createElement('a');
         etherscanLink.href = `https://etherscan.io/tx/${transaction.tx_hash}`;
         etherscanLink.target = '_blank';
         etherscanLink.textContent = `${transaction.tx_hash}`; // Set the text content to the transaction hash
         etherscanLinkElement.appendChild(etherscanLink);
-        footerDiv.appendChild(etherscanLinkElement);
-        receiptDiv.appendChild(footerDiv);
-
-        const detailsDiv = document.createElement('div');
-        detailsDiv.className = 'details';
+        detailsDiv.appendChild(etherscanLinkElement);
 
         const walletElement = document.createElement('p');
         walletElement.innerHTML = `<strong>Wallet Address:</strong> ${transaction.from_address}`;
@@ -159,7 +158,7 @@ fetch(apiUrl)
       }
     });
 
-    fs.writeFile('output.html', dom.serialize(), function (err) {
+    fs.writeFile('index.html', dom.serialize(), function (err) {
       if (err) throw err;
       console.log('Saved!');
   });
