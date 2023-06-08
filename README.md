@@ -14,8 +14,8 @@ Here is a live demo: https://leichain.github.io/blockchain-receipts/
 ![API call](/images/api-call.png)
 3. Navigate to your repository settings, then go to pages. Configure GitHub pages to deploy from your main branch.
 ![GitHub pages](/images/github-pages.png)
-4. In your `package.json` file, modify the `"homepage"` URL to replace leichain with your GitHub name.
-5. Now, the `index.html` file is where your HTML is going to print when you run the `styling.mjs` scipt. Delete the current `index.html` file.
+4. In your `package.json` file, modify the `"homepage"` URL to replace `leichain` with your GitHub name.
+5. Now, the `index.html` file is where your HTML is going to print when you run the `styling.mjs` script. Delete the current `index.html` file.
 6. Open your terminal in VSCode. Now install your packages by typing `npm install node-fetch jsdom`. You can also install GitHub pages by typing `npm install gh-pages`.
 7. Now we run our script. To do so, type `node styling.mjs`. You should see a new `index.html` file appear with your HTML. 
 8. To view your receipt, go back to your settings for GitHub pages and click "Visit site" where it says your site is live. Alternatively, you can paste the same `"homepage"` URL from `package.json` into your browser. That's it!
