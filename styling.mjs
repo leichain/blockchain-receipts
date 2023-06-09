@@ -1,8 +1,10 @@
 import fetch from 'node-fetch';
 import { JSDOM } from 'jsdom';
 import fs from 'fs';
+import dotenv from 'dotenv'
+dotenv.config()
 
-const apiUrl = 'https://api.covalenthq.com/v1/eth-mainnet/transaction_v2/0x409b56eaa505274b636835fd1ec5a8319a1c9278731054be1b9842b48b0ca548/?&no-logs=true&with-nft-sales=true&key=ckey_df06b26ac0f6496cbe4d04455ec';
+const apiUrl = `https://api.covalenthq.com/v1/eth-mainnet/transaction_v2/0x409b56eaa505274b636835fd1ec5a8319a1c9278731054be1b9842b48b0ca548/?&no-logs=true&with-nft-sales=true&key=${process.env.COVALENT_API_KEY}`;
 
 fetch(apiUrl)
   .then(response => response.json())
