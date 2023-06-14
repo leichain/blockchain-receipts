@@ -10,7 +10,8 @@ Here is a live demo: https://leichain.github.io/blockchain-receipts/
 ## How to Use This Template
 
 1. Fork this repository
-2. In `styling.mjs`, modify the `const apiUrl` API call with the transaction hash you want to display, and input your API key at the end of the API call.
+2. Create a `.env` file and input your API key as follows: `COVALENT_API_KEY=abc`, where "abc" is your key. Your key will remain private as long as you have `.env` specified in your `.gitignore` file.
+2. In `styling.mjs`, modify the `const apiUrl` API call with the transaction hash you want to display.
 ![API call](/images/api-call.png)
 3. Navigate to your repository settings, then go to pages. Configure GitHub pages to deploy from your main branch.
 ![GitHub pages](/images/github-pages.png)
